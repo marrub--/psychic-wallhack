@@ -1,0 +1,1 @@
+this was going to be named stupid_utils but github gave me a much better name
