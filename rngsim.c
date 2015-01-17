@@ -55,7 +55,7 @@ int main()
     printf("::: %d:%d :::\n", iarr3[ii], iarr2[ii]);
     for(butt1 = 0; butt1 < iarr2[ii]; butt1++)
     {
-      printf("%d\n", iarr[iiii++] % iarr3[ii]);
+      printf("%d\n", iarr[iiii++] % iarr3[ii] + 1);
     }
   }
   
