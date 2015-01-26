@@ -48,6 +48,6 @@ if(i== -1)puts(" --");if(i== -2)puts(",");} int
 #define bust "bust "
 #define With i++)); fputs("With "
 #define such "such "
-#define name "name as "
+#define name "name "
 #define as "as "
 #define Nevermore "Nevermore\n", stdout);}
