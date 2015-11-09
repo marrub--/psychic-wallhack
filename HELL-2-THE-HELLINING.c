@@ -12,16 +12,13 @@ print_Collumn(iR,iG,iB)
 	
 	}
 put_Header()
-{	char* szHead="P3\n#\n200 200\n";
+{	char* szHead="P3\n#\n200 200\n255\n";
 	fpPPM=fopen( "out.ppm","w" );
 	fwrite( szHead,1,strlen(szHead),fpPPM );
 	
 	}
 print_Done()
-{	extern struct FILE* stdout;
-	char* szDone="done\n";
-	fwrite( szDone,1,strlen(szDone),stdout );
-	fclose( fpPPM );
+{	fclose( fpPPM );
 	
 	}
 put_Row(iW)
