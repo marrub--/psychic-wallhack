@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 struct Class
 {
@@ -33,18 +34,28 @@ int Print(char const *fmt, T &&head, Args &&...tail)
       if(p[0] == '{')
          switch(p[1])
          {
-         case '}': std::cout << head; return ret + Print(p + 2, tail...);
+         case '}':
+            if(std::ostringstream o; true)
+            {
+               o << head;
+               std::cout << o.str();
+               return (o.str().size()) + ret + Print(p + 2, tail...);
+            }
          case '{': p++; break;
          }
 
       std::cout.put(*p);
    }
 
-   return -1; // won't happen
+   return ret;
 }
 
 int main()
 {
    Class c;
-   Print("a{}b{{}c{d{}e{}f", 91230, c);
+   // should output:
+   // a91230b{}c{d300e{}f
+   // ret = 19
+   int ret = Print("a{}b{{}c{d{}e{}f", 91230, c);
+   Print("ret = {}", ret);
 }
